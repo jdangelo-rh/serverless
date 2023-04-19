@@ -1,24 +1,24 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: ksvc-httpd2
+  name: ksvc-httpd
   namespace: apache
   labels:
-    app.kubernetes.io/component: ksvc-httpd2
-    app.kubernetes.io/instance: ksvc-httpd2
-    app.kubernetes.io/name: httpd2
+    app.kubernetes.io/component: ksvc-httpd
+    app.kubernetes.io/instance: ksvc-httpd
+    app.kubernetes.io/name: httpd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      deployment: httpd2
+      deployment: httpd
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app.kubernetes.io/component: ksvc-httpd2
-        app.kubernetes.io/instance: ksvc-httpd2
-        deployment: httpd2
+        app.kubernetes.io/component: ksvc-httpd
+        app.kubernetes.io/instance: ksvc-httpd
+        deployment: httpd
     spec:
       containerConcurrency: 0
       volumes:
