@@ -26,8 +26,7 @@ spec:
           emptyDir: {}
       initContainers:
         - name: init-httpd
-          image: >-
-            registry.redhat.io/rhel8/httpd-24
+          image: registry.redhat.io/rhel8/httpd-24@sha256:7a46fd21bbaf590960b39161c968298a32b49f7cb7eb3a840e211e13a16e313e
           command:
             - sh
             - '-c'
@@ -41,8 +40,7 @@ spec:
           imagePullPolicy: IfNotPresent
       containers:
         - name: httpd
-          image: >-
-            registry.redhat.io/rhel8/httpd-24
+          image: registry.redhat.io/rhel8/httpd-24@sha256:7a46fd21bbaf590960b39161c968298a32b49f7cb7eb3a840e211e13a16e313e
           ports:
             - containerPort: 8080
               protocol: TCP
